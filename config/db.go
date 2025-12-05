@@ -6,18 +6,12 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
-	"github.com/snghnaveen/workshop/src"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
 var DB *gorm.DB
 
-var CodeGen *src.ShortCodeGenerator
-
-func init() {
-	CodeGen = src.NewShortCodeGenerator()
-}
 func ConnectDatabase() {
 	err := godotenv.Load()
 	if err != nil {
